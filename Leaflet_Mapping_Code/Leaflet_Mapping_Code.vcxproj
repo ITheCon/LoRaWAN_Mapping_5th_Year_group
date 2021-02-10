@@ -22,8 +22,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{57697a79-6fac-42c0-9243-41ac5cd92842}</ProjectGuid>
-    <RootNamespace>LeafletMappingWebSoftware</RootNamespace>
+    <ProjectGuid>{bf109368-73d5-4eae-bf18-c1ff3031e6ff}</ProjectGuid>
+    <RootNamespace>LeafletMappingCode</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
