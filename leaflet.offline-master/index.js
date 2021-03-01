@@ -9,8 +9,8 @@ function showTileList() {
       const createdAt = new Date(r[i].createdAt);
       list.insertAdjacentHTML(
         'beforeend',
-          r[i].key
         `<tr><td>${i}</td><td>${r[i].url}</td><td>${
+          r[i].key
         }</td><td>${createdAt.toDateString()}</td></tr>`,
       );
     }
@@ -27,12 +27,12 @@ const baseLayer = L.tileLayer
   .offline(urlTemplate, {
     attribution: 'Map data {attribution.OpenStreetMap}',
     subdomains: 'abc',
-    minZoom: 13,
+    minZoom: 8,
   })
   .addTo(map);
 // add buttons to save tiles in area viewed
 const control = L.control.savetiles(baseLayer, {
-  zoomlevels: [13, 16], // optional zoomlevels to save, default current zoomlevel
+  zoomlevels: [8, 11], // optional zoomlevels to save, default current zoomlevel
   confirm(layer, successCallback) {
     // eslint-disable-next-line no-alert
     if (window.confirm(`Save ${layer._tilesforSave.length}`)) {
@@ -53,10 +53,10 @@ control.addTo(map);
 
 map.setView(
   {
-    lat: 51.985,
-    lng: 5,
+    lat: 55.953251,
+    lng: -3.188267,
   },
-  16,
+  10,
 );
 // layer switcher control
 const layerswitcher = L.control
