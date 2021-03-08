@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\leaflet.offline-master"
+    "\\leaflet.offline-master",
+    "\\leaflet.offline-master\\AtlasMaps\\4uMaps"
   ],
-  "SelectedNode": "\\leaflet.offline-master\\index.js",
+  "SelectedNode": "\\leaflet.offline-master\\index.html",
   "PreviewInSolutionExplorer": false
 }
