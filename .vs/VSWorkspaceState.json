@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\leaflet.offline-master",
-    "\\leaflet.offline-master\\AtlasMaps\\4uMaps"
+    "\\exercise_02_leaflet",
+    "\\exercise_02_leaflet\\public"
   ],
-  "SelectedNode": "\\leaflet.offline-master\\index.html",
+  "SelectedNode": "\\exercise_02_leaflet\\public\\index.html",
   "PreviewInSolutionExplorer": false
 }
