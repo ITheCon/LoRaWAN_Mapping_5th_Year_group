@@ -27,16 +27,34 @@
     </p>
     <div id="mymap"></div>
 
+    <p>Select local CSV File:</p>
+    <input id="csv" type="file">
+
+    <output id="out">
+         file contents will appear here
+    </output>
+
     <script>
 
+    var fileInput = document.getElementById("csv"),
 
+    readFile = function () {
+        var reader = new FileReader();
+        reader.onload = function () {
+            document.getElementById('out').innerHTML = reader.result;
+        };
+        // start reading the file. When it is done, calls the onload event defined above.
+        reader.readAsBinaryString(fileInput.files[0]);
+    };
+
+    fileInput.addEventListener('change', readFile);
     </script>
 
     <script>
     var mymap = L.map('mymap').setView([55.9533, -3.1883], 15);
 
     L.tileLayer('map/{z}/{x}/{y}.png',
-    {    maxZoom: 14,
+    {    maxZoom: 15,
          minZoom: 11
     }).addTo(mymap);
 
@@ -48,6 +66,7 @@
        document.getElementById('latitude').textContent = lat;
        document.getElementById('longitude').textContent = lng;
     });
+
 
     /* For lines
     var latlngs = [
