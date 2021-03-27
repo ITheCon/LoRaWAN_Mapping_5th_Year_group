@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+    <link rel="stylesheet" charset="utf-8" href="leaflet/leaflet.css" />
+	  <script type="text/javascript" charset="utf-8" src="leaflet/leaflet.js"></script>
+
+
+
+    <style>
+      #mymap {
+        height: 600px;
+        width: 1600px;
+      }
+    </style>
+    <title>Document</title>
+
+  </head>
+
+  <body>
+    <h1>Tracking system</h1>
+    <p>
+      Latitude: <span id="latitude"></span>&deg;<br />
+      Longitude: <span id="longitude"></span>&deg;
+    </p>
+    <div id="mymap"></div>
+
+
+    <script>
+    //var mymap = L.map('mymap').setView([55.9533, -3.1883], 13);
+    var mymap = L.map('mymap').setView([55.9533, -3.1883], 13);
+/*
+    L.tileLayer('map/{z}/{x}/{y}.png',
+    {    maxZoom: 15,
+         minZoom: 11
+    }).addTo(mymap);
+*/
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          {
+              maxZoom: 18
+          }).addTo(mymap);
+
+    var lat, lng; // Gives the lat and lng of the mouse
+    mymap.addEventListener('mousemove', function(ev) {
+       lat = ev.latlng.lat;
+       lng = ev.latlng.lng;
+       document.getElementById('latitude').textContent = lat;
+       document.getElementById('longitude').textContent = lng;
+    });
+
+    var pathTraveled= new Array();
+    var pathTraveledNode2= new Array();
+    var atTime= new Array();
+    var temp = new Array();
+
+    var marker = L.marker([pathTraveledNode2[0][0],pathTraveledNode2[0][1]]).addTo(mymap);
+    var polyline = L.polyline(pathTraveledNode2, {color: 'blue'}).addTo(mymap);
+
+
+    console.log(marker);
+
+
+    </script>
+
+</html>
